@@ -1,0 +1,42 @@
+.small-text{
+  font-size: .75rem;
+  line-height: 1.33;
+  color: #767676;
+}
+.wrapper{
+  max-width:400px;
+  margin: 0 auto;
+}
+.sign-in {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  margin-top: 40px;
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 6px 6px 6px 6px;
+  &__header {
+    padding: 0.5rem 1.5rem 1.5rem;
+    font-size: 23px;
+  }
+  &__form-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    text-align: left;
+  }
+  &__email {
+    margin: 0 0 10px;
+  }
+  &__password {
+    margin: 10px 0 5px;
+  }
+  &__forgot-password{
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  &__submit{
+    margin-top: 1rem;
+  }
+}
