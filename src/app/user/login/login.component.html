@@ -6,15 +6,15 @@
       <form #myForm="ngForm" id="sign-in-form" (ngSubmit)="login(myForm)">
         <div class="sign-in__email">
           <label class='sign-in__label'>Email </label>
-          <input class='sign-in__input' (ngModel)="email" id="user_email" name="email"/>
+          <input class='sign-in__input' (ngModel)="username" id="user_email" name="email"/>
         </div>
         <div class="sign-in__password">
           <label class='sign-in__label'>Password</label>
-          <input class='sign-in__input' id="user_password" name="password"/>
+          <input class='sign-in__input' (ngModel)="password" id="user_password" name="password"/>
         </div>
         <div class="text-left small-text">
           <a class="sign-in__forgot-password">
-            Forgot password?
+            {{errorMessage}}
           </a>
         </div>
         <div class="sign-in__submit">
