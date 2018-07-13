@@ -10,13 +10,16 @@ import {AuthService} from '../auth.service';
 export class LoginComponent {
   errorMessage: string;
   pageTitle = 'Log In';
+  username
+  password
 
   constructor(private authService: AuthService) { }
 
   login(loginForm: NgForm) {
+    console.log(loginForm);
     if (loginForm && loginForm.valid) {
-      let userName = loginForm.form.value.userName;
-      let password = loginForm.form.value.password;
+      let userName = loginForm.value.username;
+      let password = loginForm.value.password;
       this.authService.login(userName, password);
     } else {
       this.errorMessage = 'Please enter a user name and password.';
