@@ -15,25 +15,18 @@ export class AuthService {
   }
 
   login(userName: string, password: string): void {
-    if (!userName || !password) {
-      this.messageService.addMessage('Please enter your userName and password');
-      return;
-    }
-    if (userName === 'admin') {
+    if (userName && password) {
+      const isAdmin = userName.toLowerCase() === 'admin';
       this.currentUser = {
-        id: 1,
+        id: isAdmin ? 1 : 2,
         userName: userName,
-        isAdmin: true
+        isAdmin: isAdmin
       };
-      this.messageService.addMessage('Admin login');
+      this.messageService.addMessage(`User: ${this.currentUser.userName} logged in`);
       return;
+    } else {
+      this.messageService.addMessage('Please enter your userName and password');
     }
-    this.currentUser = {
-      id: 2,
-      userName: userName,
-      isAdmin: false
-    };
-    this.messageService.addMessage(`User: ${this.currentUser.userName} logged in`);
   }
 
   logout(): void {

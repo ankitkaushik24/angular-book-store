@@ -16,7 +16,6 @@ export class MessagesComponent implements OnInit {
   }
 
   close(): void {
-    // Close the popup.
   }
 
 }
