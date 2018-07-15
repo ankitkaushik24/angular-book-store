@@ -1,21 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UserModule } from './user/user.module';
+import {  AuthenticationModule } from './app-authentication/authentication.module';
 import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './app-routes/app.routes';
 import { WelcomeComponent } from './welcome/welcome.component';
-import {MessagesModule} from './messages/messages.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {BookModule} from './book/book.module';
+import { NotificationModule } from './app-notification/app-notification.module';
+import { PageNotFoundComponent } from './app-error-pages/page-not-found/page-not-found.component';
+import { ProductModule } from './app-main/app-product/app-product.module';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+import { AppHomeComponent } from './app-main/app-home/app-home.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    BookModule,
-    UserModule,
-    MessagesModule,
+    ProductModule,
+    AuthenticationModule,
+    NotificationModule,
     RouterModule.forRoot(routes)
   ],
   declarations: [
@@ -23,7 +25,8 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     AppHeaderComponent,
     WelcomeComponent,
     PageNotFoundComponent,
-    AppHeaderComponent
+    AppFooterComponent,
+    AppHomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

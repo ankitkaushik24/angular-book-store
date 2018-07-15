@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IUser} from './user.model';
-import {MessageService} from '../messages/messages.service';
+import {AppNotificationService} from '../app-notification/app-notification.service'
 
 
 
@@ -8,7 +8,7 @@ import {MessageService} from '../messages/messages.service';
 export class AuthService {
   currentUser: IUser;
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: AppNotificationService) { }
 
   isLoggedIn(): boolean {
     return !!this.currentUser;

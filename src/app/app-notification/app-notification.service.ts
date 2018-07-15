@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class MessageService {
+export class AppNotificationService {
   private messages: string[] = [];
 
   addMessage(message: string): void {
