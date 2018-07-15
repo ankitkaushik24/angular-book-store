@@ -1,3 +1,13 @@
-<p>
-  app-home works!
-</p>
+<div>
+    <div class="home-wrapper">
+        <ng-container *ngTemplateOutlet="categoriestemplate; context:{categoriesArray :newArray.left}"></ng-container>
+        <ng-container *ngTemplateOutlet="categoriestemplate; context:{categoriesArray : newArray.middle}"></ng-container>
+        <ng-container *ngTemplateOutlet="categoriestemplate; context:{categoriesArray : newArray.right}"></ng-container>
+      </div>
+</div>
+<ng-template #categoriestemplate let-categoriesArray="categoriesArray">
+  <ul class="categories-wrapper">
+    <li *ngFor="let item of categoriesArray">
+      {{item.name}} </li>
+  </ul>
+</ng-template>
