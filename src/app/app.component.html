@@ -3,7 +3,7 @@
     <source src="../assets/videos/background.mp4" type="video/mp4">
 </video>
 <div class='page-main'>
-        <app-header></app-header>
+  <app-header *ngIf="isAuthenticated"></app-header>
         <router-outlet></router-outlet>
     </div>
 

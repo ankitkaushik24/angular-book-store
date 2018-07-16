@@ -1,28 +1,17 @@
-<div class="wrapper">
-  <div class="logo"></div>
-  <div class="sign-in">
-    <div class="sign-in__header"> Book Store</div>
-    <div class="sign-in__form-wrapper">
-      <form #myForm="ngForm" id="sign-in-form" (ngSubmit)="login(myForm)">
-        <div class="sign-in__email">
-          <label class='sign-in__label'>Email </label>
-          <input class='sign-in__input' (ngModel)="username" id="user_email" name="email"/>
-        </div>
-        <div class="sign-in__password">
-          <label class='sign-in__label'>Password</label>
-          <input class='sign-in__input' (ngModel)="password" id="user_password" name="password"/>
-        </div>
-        <div class="text-left small-text">
-          <a class="sign-in__forgot-password">
-            {{errorMessage}}
-          </a>
-        </div>
-        <div class="sign-in__submit">
-          <button class="sign-in__submit-btn" type="submit">
-            <span>Sign in</span>
-          </button>
-        </div>
-      </form>
+<form #myForm="ngForm" (ngSubmit)="login(myForm)" class="myForm">
+  <fieldset>
+    <legend>
+      <img src="../../../assets/images/user-logo.png">
+    </legend>
+    <div class="input-container">
+      <input name="username" (ngModel)="username" [class.dirty]="myForm.value.username" required type="text">
+      <label>Username</label>
     </div>
-  </div>
-</div>
+    <div class="input-container">
+      <input name="password" (ngModel)="password" [class.dirty]="myForm.value.password" required type="password">
+      <label>Password</label>
+
+    </div>
+    <button type="submit" [disabled]="!myForm.valid" [class.not-valid]="!myForm.valid"class="login-btn">Login</button>
+  </fieldset>
+</form>
